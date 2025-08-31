@@ -4,24 +4,17 @@ namespace UserManagementApi.Models;
 
 public class User
 {
-    [Required]
-    private int Id { get; set; }
+    public required int Id { get; set; }
     
-    [Required]
-    private string Name { get; set; }
+    public required string Name { get; set; }
     
-    [Required]
     [StringLength(10, ErrorMessage = "Phone number cannot exceed 10 digits")]
-    private string Phone { get; set; }
+    public string Phone { get; set; }
     
-    [Required]
-    private DateOnly Birthdate { get; set; }
-    
-    [Required]
     private string Address { get; set; }
 
     public override string ToString()
     {
-        return $"User {Id}, {Name}, {Phone}, {Birthdate}, {Address}";
+        return $"User {Id}, {Name}, {Phone}, {Address}";
     }
 }

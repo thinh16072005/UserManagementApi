@@ -4,7 +4,7 @@ namespace UserManagementApi.Services;
 
 public class UserService : IUserService
 {
-    private readonly List<User> _users = [];
+    private static List<User> _users = [];
     
     public List<User> getAllUsers()
     {
@@ -13,11 +13,12 @@ public class UserService : IUserService
 
     public User getUserById(int id)
     {
-        return _users[id];
+        return _users.FirstOrDefault(u => u.Id == id);
     }
 
     public void createUser(User user)
     {
+        user.Id = _users.Count == 0 ? 1 : _users[^1].Id + 1;
         _users.Add(user);
     }
 
