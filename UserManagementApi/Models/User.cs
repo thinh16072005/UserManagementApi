@@ -19,4 +19,9 @@ public class User
     
     [Required]
     private string Address { get; set; }
+
+    public override string ToString()
+    {
+        return $"User {Id}, {Name}, {Phone}, {Birthdate}, {Address}";
+    }
 }
