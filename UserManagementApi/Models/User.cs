@@ -11,7 +11,7 @@ public class User
     [StringLength(10, ErrorMessage = "Phone number cannot exceed 10 digits")]
     public string Phone { get; set; }
     
-    private string Address { get; set; }
+    public string Address { get; set; }
 
     public override string ToString()
     {
