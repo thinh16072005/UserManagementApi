@@ -4,9 +4,9 @@ namespace UserManagementApi.Services;
 
 public interface IUserService
 {
-    List<User> getAllUsers();
-    User getUserById(int id);
-    void createUser(User user);
-    void updateUser(int id, User user);
-    void deleteUser(int id);
+    List<User> GetAllUsers();
+    User GetUserById(int id);
+    void CreateUser(User user);
+    void UpdateUser(int id, User user);
+    void DeleteUser(int id);
 }
