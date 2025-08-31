@@ -6,27 +6,27 @@ public class UserService : IUserService
 {
     private readonly List<User> _users = [];
     
-    public List<User> getAllUsers()
+    public List<User> GetAllUsers()
     {
         return _users;
     }
 
-    public User getUserById(int id)
+    public User GetUserById(int id)
     {
         return _users[id];
     }
 
-    public void createUser(User user)
+    public void CreateUser(User user)
     {
         _users.Add(user);
     }
 
-    public void updateUser(int id, User user)
+    public void UpdateUser(int id, User user)
     {
         _users[id] = user;
     }
 
-    public void deleteUser(int id)
+    public void DeleteUser(int id)
     {
         _users.RemoveAt(id);
     }
