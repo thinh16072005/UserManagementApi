@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.HttpLogging;
 using UserManagementApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,8 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddControllers();
-
-
+builder.Services.AddHttpLogging(logging => {
+    logging.LoggingFields = HttpLoggingFields.All;
+});
 
 var app = builder.Build();
 
@@ -18,5 +20,6 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+app.UseExceptionHandler("/error");
 app.MapControllers();
 app.Run();
